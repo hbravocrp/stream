@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Add Feed</h2>
+    <div class="col-lg-4 aggregation media">   
+        <label style="line-height:45px">Selecciona la imagen:</label>
+        
+            <form action="/add_feed" method="post" enctype="multipart/form-data">        
+                <!-- <input type="text" name="image_url" required> -->
+                <div class="pin-image-holder">
+                    <input type="file" name="image_url" id="image_url" required>
+                </div>
+                <button class="btn btn-primary btn-sm" style="margin-top: 10px;">Guardar</button>
+            </form>
+     
+    </div>
+</div>

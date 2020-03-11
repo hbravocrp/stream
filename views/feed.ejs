@@ -1,0 +1,13 @@
+<div id="wrapper">
+    <h2>Flat Feed</h2>
+    <div class="container-pins">
+        <% activities.forEach(function(activity){  %>
+            <%if (activity.verb == 'Pin') {%>
+                <%- include pin.ejs %>
+            <% } else{ %>
+            	<%- include follow.ejs %>
+            <% } %>
+        <% }) %>
+    </div>
+   
+</div>

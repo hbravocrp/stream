@@ -1,0 +1,15 @@
+<li class="notification-item" style="border: 1px red;">
+	<div>
+        <article>
+            <figure>
+                <div>
+                    <img src="<%= lastFollower.object.user.avatar_url %>" width="32">
+                    <figcaption>
+                        <%= lastFollower.object.user.username %><%if (count > 1) {%> and  <%= count - 1 %>more <% } %> followed you
+                        <span class="timesince"><%= lastFollower.time %></span>
+                    </figcaption>
+                </div>
+            </figure>
+        </article>
+	</div>
+</li>

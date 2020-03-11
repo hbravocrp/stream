@@ -1,0 +1,55 @@
+<div class="aggregation media">
+    <div class="pull-left">
+         <% if (activities_aggregated.activities[0].object.item) { %>
+        	<img src="<%= activities_aggregated.activities[0].object.user.avatar_url %>" width="55px">
+         <% } %>        
+    </div>
+    <div class="media-body">
+        <div class="media-heading">
+            <div class="aggregation-header">
+                <div class="aggregation-time pull-right">
+                </div>
+                <div class="aggregation-title">
+                    <span><%= activities_aggregated.activities.length %> pins</span>
+                </div>
+            </div>
+        </div>
+        <% activities_aggregated.activities.forEach(function(activity){ %>
+            <% if (activity.object.item) { %>
+            <article class="pin">
+                <figure>
+                    <div class="pin-image-holder">
+                        <img class="pin-image" src="/media/<%= activity.object.item.image_url %>">
+                    </div>
+                    <%if (activity.message) {%>
+                        <figcaption class="pin-caption">
+                            <%= activity.message %>
+                        </figcaption>
+                    <% } %>
+                </figure>
+                <form class="pin-bottom" method="POST" action="/pin">
+                    <div class="media">
+                        <div class="pull-left">                                    
+                            <input class="btn btn-primary btn-sm" type="submit" value="Pin">
+                        </div>
+                        <div class="media-body">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon text-muted">in</span>
+                                <input class="form-control" name="board_name" placeholder="Board name" type="text" value="My favourite things">
+                            </div>
+                        </div>
+                    </div>
+                    <input name="influencer" type="hidden" value="<%= activity.object.item.image_url %>">
+                    <input name="item" type="hidden" value="<%= activity.object.item._id %>">
+                </form>
+                    <footer class="pin-attribution">
+                        by <a href="/profile/<%= activity.object.user.username %>"><%= activity.object.user.username %></a>
+                        <span class="timesince"><%= activity.time %></span>
+                        </footer>
+            </article>
+            <% } else { %>
+                <% console.log('Not enriched activity: ', activity); %>
+            <% } %>
+        <% }) %>
+    </div>
+</div>
