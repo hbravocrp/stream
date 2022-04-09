@@ -23,7 +23,7 @@
 		"formidable": "^1.2.2",
 		"getstream-node": "1.5.0",
 		"method-override": "^2.3.9",
-		"moment": "^2.18.1",
+		"moment": "^2.29.2",
 		"mongoose": "^4.11.8",
 		"nconf": "^0.8.4",
 		"nodemon": "^1.11.0",
