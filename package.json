@@ -25,7 +25,7 @@
 		"method-override": "^2.3.9",
 		"moment": "^2.18.1",
 		"mongoose": "^4.11.8",
-		"nconf": "^0.8.4",
+		"nconf": "^0.11.4",
 		"nodemon": "^1.11.0",
 		"passport": "^0.4.0",
 		"passport-facebook": "^3.0.0",
